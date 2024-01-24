@@ -3,9 +3,16 @@ services:
   test-mysql:
     container_name: test-mysql
     image: mysql:5.7
-#    network_mode: host
     ports:
       - '3306:3306'
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: testdb
+  jaewa-school-test-demo:
+    container_name: jaewa-school-test-api
+    image: jaewa-school-test-api:0.0.1-SNAPSHOT
+    ports:
+      - '8500:8500'
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: testdb
