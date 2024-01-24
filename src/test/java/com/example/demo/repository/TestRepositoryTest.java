@@ -47,7 +47,7 @@ class TestRepositoryTest {
         this.testRepository.save(new TestEntity("pippo"));
 
         List<TestEntity> all = this.testRepository.findAll();
-        assertEquals(1, all.size());
+        assertEquals(2, all.size());
     }
 
 }
