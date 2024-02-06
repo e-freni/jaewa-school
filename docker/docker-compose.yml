@@ -9,10 +9,18 @@ services:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: testdb
 
-  jaewa-school-test-demo:
+  jaewa-school-test-demo-api:
     container_name: jaewa-school-test-api
     image: jaewa-school-test-api:0.0.1-SNAPSHOT
     ports:
       - '8500:8500'
     env_file:
       - ./env.list
+
+  jaewa-school-test-demo-ui:
+    container_name: jaewa-school-test-ui
+    image: jaewa-school-test-ui:0.0.1-SNAPSHOT
+    ports:
+      - 8501:80
+    restart: unless-stopped
+
